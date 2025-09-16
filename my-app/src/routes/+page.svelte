@@ -1,22 +1,25 @@
 <!-- Data inladen -->
 <script>
-    import AnimationText from "$lib/components/AnimationText.svelte";
-    import AnimationSection from "$lib/components/AnimationSection.svelte";
+const imgContent = document.querySelectorAll(".img-content-hover");
 
-    let { data } = $props(); // rune die data doorgeeft tussen page.server.js en page.svelte ("magische property")
+function showImgContent(e) {
+  for (var i = 0; i < imgContent.length; i++) {
+    x = e.pageX;
+    y = e.pageY;
+    imgContent[i].style.transform = `translate3d(${x}px, ${y}px, 0)`;
+  }
+}
 
-    const members = data.members; 
-    const sort = data.sort; 
+document.addEventListener("mousemove", showImgContent);
 
-    import { goto } from "$app/navigation";
-    import { page } from "$app/stores";
+const [red, green, blue] = [69, 111, 225]
+const section1 = document.querySelector('.section1')
 
-    function handleChange(event) {
-        const value = event.target.value;
-        const url = new URL($page.url);
-        url.searchParams.set("sort", value);
-        goto(url.toString());
-    }
+window.addEventListener('scroll', () => {
+  const y = 1 + (window.scrollY || window.pageYOffset) / 150
+  const [r, g, b] = [red/y, green/y, blue/y].map(Math.round)
+  section1.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+})
 </script>
 
 <!-- HTML -->
