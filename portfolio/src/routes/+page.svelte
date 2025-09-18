@@ -1,60 +1,67 @@
-<script>
+<!-- Font import moved to CSS for Svelte compatibility -->
 
-    const imgContent = document.querySelectorAll(".img-content-hover");
+  <header>
+    <h1 class="title">
+      Stella Clough
+    </h1>
+  </header>
 
-function showImgContent(e) {
-  for (var i = 0; i < imgContent.length; i++) {
-    x = e.pageX;
-    y = e.pageY;
-    imgContent[i].style.transform = `translate3d(${x}px, ${y}px, 0)`;
-  }
-}
-
-document.addEventListener("mousemove", showImgContent);
-
-const [red, green, blue] = [69, 111, 225]
-const section1 = document.querySelector('.section1')
-
-window.addEventListener('scroll', () => {
-  const y = 1 + (window.scrollY || window.pageYOffset) / 150
-  const [r, g, b] = [red/y, green/y, blue/y].map(Math.round)
-  section1.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
-})
-</script>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stella Clough</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" type="image/x-icon" href="/assets/faviconiloveweb.png">
-</head>
-<body>
-<nav>
-  <div class="container">
-    <div class="grid">
-      <div class="column-xs-12 column-md-10">
-        <p id="highlight">Stella Clough</p>
-      </div>
-      <div class="column-xs-12 column-md-2">
-        <ul>
-          <li><a id="body" href="#">Projects</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </div>
+  <!-- funky sentences -->
+   
+  <div class="wrapper">
+    <div class="containera">
+      <ul>
+        <li class="role">
+          I love web.
+        </li>
+        <li class="role">
+          I create.
+        </li>
+        <li class="role">
+          I learn.
+        </li>
+        <li class="role">
+          I travel.
+        </li>
+        <li class="role">
+          I bake.
+        </li>
+        <li class="role">
+          I read.
+        </li>
+      </ul>
     </div>
+        <!-- scroll down button -->
+  <section>
+    <a href="#" class="go-down" address="true"></a>
+    </section>
+    <section class="ok">
+    </section>
   </div>
-</nav>
+
+<section class="aboutme">
+  <div class="container">
+    <h2 class="subtitle">About me</h2>
+    <p class="text">
+      Hey there! I'm Stella, a 23 year old (aspiring) frontend designer based
+    in the Netherlands. I've always been interested in design and aesthetics,
+    and routinely find myself wishing websites were designed better. I hope
+    that I can one day make people's experiences on the internet a little smoother,
+    easier and prettier. You can check out all of my latest work via the projects below.
+    </p>
+  </div>
+</section>
+
+
 <section class="gallery">
   <div class="container">
     <div class="grid">
-      <div class="column-xs-12 column-md-4">
+
+
+            <div class="column-xs-12 column-md-6">
         <figure class="img-container">
-        <a href=https://misspastelwitch.github.io/I-love-web/>
-          <img src="./assets/iloveweb.png" />
+          <a href=https://misspastelwitch.github.io/I-love-web/>
+          <img src="../src/lib/assets/iloveweb.png" />
           <figcaption class="img-content">
             <h2 class="title">I love web</h2>
             <h3 class="category">Have a look</h3>
@@ -65,10 +72,11 @@ window.addEventListener('scroll', () => {
           </span>
         </figure>
       </div>
-      <div class="column-xs-12 column-md-4">
+
+                <div class="column-xs-12 column-md-5">
         <figure class="img-container">
         <a href=https://dutchdigitalagencies-vacatures.onrender.com>
-          <img src="./assets/DDA.png" />
+          <img src="../src/lib/assets/DDA.png" />
         </a>
           <figcaption class="img-content">
             <h2 class="title">Dutch Digital Agencies</h2>
@@ -80,51 +88,11 @@ window.addEventListener('scroll', () => {
           </span>
         </figure>
       </div>
-      <div class="column-xs-12 column-md-4">
+
+      <div class="column-xs-12 column-md-5">
         <figure class="img-container">
-        <a href=https://github.com/misspastelwitch/the-startup-responsive-interactive-website>
-          <img src="./assets/weirdcoolstuff.png">
-        </a>
-          <figcaption class="img-content">
-            <h2 class="title">Weird Cool Stuff</h2>
-            <h3 class="category">Have a look</h3>
-          </figcaption>
-          <span class="img-content-hover">
-            <h2 class="title">Weird Cool Stuff</h2>
-            <h3 class="category">Have a look</h3>
-          </span>
-        </figure>
-      </div>
-      <div class="column-xs-12 column-md-6">
-        <figure class="img-container">
-          <img src="./assets/noimage.png" />
-          <figcaption class="img-content">
-            <h2 class="title">Project</h2>
-            <h3 class="category">Have a look</h3>
-          </figcaption>
-          <span class="img-content-hover">
-            <h2 class="title">Project</h2>
-            <h3 class="category">Have a look</h3>
-          </span>
-        </figure>
-      </div>
-      <div class="column-xs-12 column-md-6">
-        <figure class="img-container">
-          <img src="./assets/noimage.png" />
-          <figcaption class="img-content">
-            <h2 class="title">Project</h2>
-            <h3 class="category">Have a look</h3>
-          </figcaption>
-          <span class="img-content-hover">
-            <h2 class="title">Project</h2>
-            <h3 class="category">Have a look</h3>
-          </span>
-        </figure>
-      </div>
-      <div class="column-lg-12">
-        <figure class="img-container">
-            <a href="https://misspastelwitch.github.io/repositorie/">
-          <img src="./assets/repositorie.png" />
+                      <a href="https://misspastelwitch.github.io/repositorie/">
+          <img src="../src/lib/assets/repositorie.png" />
           </a>
           <figcaption class="img-content">
             <h2 class="title">Repositorie</h2>
@@ -136,26 +104,348 @@ window.addEventListener('scroll', () => {
           </span>
         </figure>
       </div>
+
+
+            <div class="column-xs-12 column-md-7">
+        <figure class="img-container">
+          <a href="https://github.com/julia-stevens/your-tribe-for-life-squad-page">
+          <img src=".../src/lib/assets/squadpage.png" />
+          </a>
+          <figcaption class="img-content">
+            <h2 class="title">FDND Squadpage</h2>
+            <h3 class="category">Have a look</h3>
+          </figcaption>
+          <span class="img-content-hover">
+            <h2 class="title">FDND Squadpage</h2>
+            <h3 class="category">Have a look</h3>
+          </span>
+        </figure>
+      </div>
+
+      <div class="column-xs-12 column-md-8">
+        <figure class="img-container">
+          <a href="https://www.sron.nl/en/missions/in-development/missies-in-development-nebula-xplorer/">
+           <img src="../src/lib/assets/nebula.png" />
+           </a>
+          <figcaption class="img-content">
+             <h2 class="title">SRON - Nebula Explorer</h2>
+            <h3 class="category">Something's coming here soon!</h3>
+          </figcaption>
+          <span class="img-content-hover">
+            <h2 class="title">SRON - Nebula Explorer</h2>
+            <h3 class="category">Something's coming here soon!</h3>
+          </span>
+        </figure>
+      </div>
+
+
+      <div class="column-xs-12 column-md-4">
+        <figure class="img-container">
+           <img src="../src/lib/assets/noimage.png" />
+          <figcaption class="img-content">
+             <h2 class="title">An upcoming project</h2>
+            <h3 class="category">Something's coming here soon!</h3>
+          </figcaption>
+          <span class="img-content-hover">
+            <h2 class="title">An upcoming project</h2>
+            <h3 class="category">Something's coming here soon!</h3>
+          </span>
+        </figure>
+      </div>
+
     </div>
   </div>
 </section>
+
+<!-- scroll down button -->
+  <section>
+    <a href="#" class="scroll-up" address="true"></a>
+    </section>
+    <section class="ok">
+    </section>
+
+
 <footer>
-  <div class="container">
-    <div class="grid">
-      <div class="column-lg-3">
-        <p> Made by Stella Clough</p>
-      </div>
-            <div class="column-lg-7">
-        <a class="back" href="#body">Back to top</a>
-      </div>
-    </div>
-  </div>
+  <p class="footer-text">© 2024 Stella Clough</p>
 </footer>
-</body>
-</html>
+
+
 
 <style>
-     .container {
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700&display=swap');
+/* 12columns.css | Created by Katherine Kato | Released under the MIT license */
+
+/* Ensure font-display: swap for optimal performance */
+:root {
+  font-family: 'Space Mono', monospace;
+  font-display: swap;
+}
+/* GitHub: https://kathykato.github.io/12columns/ */
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  cursor: url(docs/assets/cursor.cur), crosshair;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  line-height: 1.5;
+  color: lightcoral;
+  margin: 0 auto;
+  padding: 0;
+  max-width: fit-content;
+  overflow-x: hidden;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+/* Global Typography */
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+form,
+textarea {
+  font-size: 1rem;
+}
+
+/* HEADER */
+
+header {
+  text-align: center;
+  margin: 1em auto;
+  margin-top: 250px;
+}
+
+.section {
+  padding: 1em 1em;
+  width: 100%;
+  margin: 1em auto;
+}
+
+
+/* Buttons */
+
+.button,
+.btn-light,
+.btn-dark {
+  display: block;
+  padding: 0.6rem 2rem;
+  margin: 1rem;
+  transition: all 0.1s;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.button {
+  color: lightgoldenrodyellow;
+  background-color: lightcoral;
+  width: 15em;
+
+}
+
+.btn-light {
+  color: #0a2472;
+  background-color: white;
+}
+
+.btn-dark {
+  color: white;
+  background-color: #0a2472;
+}
+
+
+
+a[class='button']:hover,
+input[class='button']:hover {
+  background-color: lightgoldenrodyellow;
+  color: lightcoral;
+  font-weight: 700;
+  transform: scale(1.08);
+}
+
+/* funky sentences */
+.wrapper {
+  padding: 1em;
+  width: 400px;
+  margin: 0 auto;
+  text-align: start;
+  margin-bottom: 400px;
+}
+
+.containera {
+  display: inline-block;
+  height: 64px;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.containera ul {
+  animation: cycle-items 4s steps(6) alternate infinite;
+}
+
+.containera li {
+  font-size: 40px;
+  height: 70px;
+}
+
+
+@keyframes cycle-items {
+  to {
+    transform: translateY(-100%)
+  }
+}
+
+/* about me */
+
+.aboutme {
+  background-color: #fef7f7;
+  padding: 5rem;
+  margin-top: -5rem;
+}
+
+/*up button*/
+
+
+
+.scroll-up {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-up {
+  margin-top: 5%;
+  margin-left: 47%;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid lightcoral;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.scroll-up:before {
+    position: absolute;
+    top: calc(70% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(135deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid lightcoral;
+    border-width: 0px 0 2px 2px;
+
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+/*down button*/
+
+
+
+.go-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.go-down {
+
+  left: 50%;
+  margin-top: 10em;
+  margin-left: 45%;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid lightcoral;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.go-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid lightcoral;
+    border-width: 0px 0 2px 2px;
+
+}
+
+.footer-text{
+  margin-left: 5%;
+  margin-top: 2rem;
+}
+
+
+
+.container {
 	 margin: auto;
 	 padding: 0 1rem;
 	 max-width: 71.25rem;
@@ -165,10 +455,11 @@ window.addEventListener('scroll', () => {
 
 @media (min-width: 48rem) {
  .container {
-	 margin: 0;
-	 padding: 0;
-	 max-width: 100%;
-	 width: 100%;
+   margin: 0;
+   padding: 0;
+   max-width: 100%;
+   width: 100%;
+ }
 }
 
 
@@ -179,7 +470,6 @@ window.addEventListener('scroll', () => {
 }
 }
 
-}
  .grid {
 	 display: flex;
 	 flex-direction: column;
@@ -204,21 +494,13 @@ window.addEventListener('scroll', () => {
 	 align-items: end;
  }
      
-     @import url("https://fonts.googleapis.com/css?family=Barlow:400,500,700");
  * {
 	 box-sizing: border-box;
 }
  *::before, *::after {
 	 box-sizing: border-box;
 }
- body {
-	 font-family: "Barlow", sans-serif;
-	 font-size: 1.125rem;
-	 line-height: 1.5;
-	 color: #787878;
-	 background: #fef7f7;
-	 text-rendering: optimizeLegibility;
-}
+
  ul li {
 	 margin: 0 1.5rem 0 0;
 }
@@ -257,8 +539,8 @@ window.addEventListener('scroll', () => {
 	 font-size: 1.25rem;
 }
  .gallery {
-	 padding: 0 0 4rem 0;
-     background-image: linear-gradient(#ea8478,#fce2e2,#fce2e2,#fce2e2,#fce2e2,#fce2e2, #fef7f7, #fef7f7, #fef7f7, #fef7f7, #fef7f7, #fef7f7);
+	 padding: 0 0 1em 0;
+    background-image:#fef7f7;
 }
 
  .img-container {
@@ -266,7 +548,9 @@ window.addEventListener('scroll', () => {
 	 height: 500px;
 	 cursor: pointer;
 	 overflow: hidden;
-     padding: 0%;
+   padding: 0%;
+   padding-right: 0;
+   padding-left: 5%;
 }
  .img-container:hover .img-content-hover {
 	 display: block;
@@ -296,7 +580,7 @@ window.addEventListener('scroll', () => {
 }
  .title {
 	 color: #2e2e2e;
-	 font-size: 1.5rem;
+	 font-size: 3rem;
 	 font-weight: 700;
 }
 
@@ -318,420 +602,6 @@ font-size: 1.5rem;
 	 display: inline-block;
      color: #787878;
 }
- footer {
-	 padding: 1rem 0;
-	 background: #f7f7f7;
-	 text-align: center;
-}
- @supports (display: grid) {
-	 .gallery .grid {
-		 grid-gap: 1rem;
-	}
-}
 
-.grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap; }
-  .grid > [class*="column-"] {
-    display: block; }
 
-.first {
-  -webkit-box-ordinal-group: 0;
-  -ms-flex-order: -1;
-  order: -1; }
-
-.last {
-  -webkit-box-ordinal-group: 13;
-  -ms-flex-order: 12;
-  order: 12; }
-
-.align-top {
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: start; }
-
-.align-center {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
-
-.align-bottom {
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: end; }
-
-.column-xs-1 {
-  -ms-flex-preferred-size: 8.33333%;
-  flex-basis: 8.33333%;
-  max-width: 8.33333%; }
-
-.column-xs-2 {
-  -ms-flex-preferred-size: 16.66667%;
-  flex-basis: 16.66667%;
-  max-width: 16.66667%; }
-
-.column-xs-3 {
-  -ms-flex-preferred-size: 25%;
-  flex-basis: 25%;
-  max-width: 25%; }
-
-.column-xs-4 {
-  -ms-flex-preferred-size: 33.33333%;
-  flex-basis: 33.33333%;
-  max-width: 33.33333%; }
-
-.column-xs-5 {
-  -ms-flex-preferred-size: 41.66667%;
-  flex-basis: 41.66667%;
-  max-width: 41.66667%; }
-
-.column-xs-6 {
-  -ms-flex-preferred-size: 50%;
-  flex-basis: 50%;
-  max-width: 50%; }
-
-.column-xs-7 {
-  -ms-flex-preferred-size: 58.33333%;
-  flex-basis: 58.33333%;
-  max-width: 58.33333%; }
-
-.column-xs-8 {
-  -ms-flex-preferred-size: 66.66667%;
-  flex-basis: 66.66667%;
-  max-width: 66.66667%; }
-
-.column-xs-9 {
-  -ms-flex-preferred-size: 75%;
-  flex-basis: 75%;
-  max-width: 75%; }
-
-.column-xs-10 {
-  -ms-flex-preferred-size: 83.33333%;
-  flex-basis: 83.33333%;
-  max-width: 83.33333%; }
-
-.column-xs-11 {
-  -ms-flex-preferred-size: 91.66667%;
-  flex-basis: 91.66667%;
-  max-width: 91.66667%; }
-
-.column-xs-12 {
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
-  max-width: 100%; }
-
-@media (min-width: 48rem) {
-  .column-sm-1 {
-    -ms-flex-preferred-size: 8.33333%;
-    flex-basis: 8.33333%;
-    max-width: 8.33333%; }
-  .column-sm-2 {
-    -ms-flex-preferred-size: 16.66667%;
-    flex-basis: 16.66667%;
-    max-width: 16.66667%; }
-  .column-sm-3 {
-    -ms-flex-preferred-size: 25%;
-    flex-basis: 25%;
-    max-width: 25%; }
-  .column-sm-4 {
-    -ms-flex-preferred-size: 33.33333%;
-    flex-basis: 33.33333%;
-    max-width: 33.33333%; }
-  .column-sm-5 {
-    -ms-flex-preferred-size: 41.66667%;
-    flex-basis: 41.66667%;
-    max-width: 41.66667%; }
-  .column-sm-6 {
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
-    max-width: 50%; }
-  .column-sm-7 {
-    -ms-flex-preferred-size: 58.33333%;
-    flex-basis: 58.33333%;
-    max-width: 58.33333%; }
-  .column-sm-8 {
-    -ms-flex-preferred-size: 66.66667%;
-    flex-basis: 66.66667%;
-    max-width: 66.66667%; }
-  .column-sm-9 {
-    -ms-flex-preferred-size: 75%;
-    flex-basis: 75%;
-    max-width: 75%; }
-  .column-sm-10 {
-    -ms-flex-preferred-size: 83.33333%;
-    flex-basis: 83.33333%;
-    max-width: 83.33333%; }
-  .column-sm-11 {
-    -ms-flex-preferred-size: 91.66667%;
-    flex-basis: 91.66667%;
-    max-width: 91.66667%; }
-  .column-sm-12 {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
-    max-width: 100%; } }
-
-@media (min-width: 62rem) {
-  .column-md-1 {
-    -ms-flex-preferred-size: 8.33333%;
-    flex-basis: 8.33333%;
-    max-width: 8.33333%; }
-  .column-md-2 {
-    -ms-flex-preferred-size: 16.66667%;
-    flex-basis: 16.66667%;
-    max-width: 16.66667%; }
-  .column-md-3 {
-    -ms-flex-preferred-size: 25%;
-    flex-basis: 25%;
-    max-width: 25%; }
-  .column-md-4 {
-    -ms-flex-preferred-size: 33.33333%;
-    flex-basis: 33.33333%;
-    max-width: 33.33333%; }
-  .column-md-5 {
-    -ms-flex-preferred-size: 41.66667%;
-    flex-basis: 41.66667%;
-    max-width: 41.66667%; }
-  .column-md-6 {
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
-    max-width: 50%; }
-  .column-md-7 {
-    -ms-flex-preferred-size: 58.33333%;
-    flex-basis: 58.33333%;
-    max-width: 58.33333%; }
-  .column-md-8 {
-    -ms-flex-preferred-size: 66.66667%;
-    flex-basis: 66.66667%;
-    max-width: 66.66667%; }
-  .column-md-9 {
-    -ms-flex-preferred-size: 75%;
-    flex-basis: 75%;
-    max-width: 75%; }
-  .column-md-10 {
-    -ms-flex-preferred-size: 83.33333%;
-    flex-basis: 83.33333%;
-    max-width: 83.33333%; }
-  .column-md-11 {
-    -ms-flex-preferred-size: 91.66667%;
-    flex-basis: 91.66667%;
-    max-width: 91.66667%; }
-  .column-md-12 {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
-    max-width: 100%; } }
-
-@media (min-width: 75rem) {
-  .column-lg-1 {
-    -ms-flex-preferred-size: 8.33333%;
-    flex-basis: 8.33333%;
-    max-width: 8.33333%; }
-  .column-lg-2 {
-    -ms-flex-preferred-size: 16.66667%;
-    flex-basis: 16.66667%;
-    max-width: 16.66667%; }
-  .column-lg-3 {
-    -ms-flex-preferred-size: 25%;
-    flex-basis: 25%;
-    max-width: 25%; }
-  .column-lg-4 {
-    -ms-flex-preferred-size: 33.33333%;
-    flex-basis: 33.33333%;
-    max-width: 33.33333%; }
-  .column-lg-5 {
-    -ms-flex-preferred-size: 41.66667%;
-    flex-basis: 41.66667%;
-    max-width: 41.66667%; }
-  .column-lg-6 {
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
-    max-width: 50%; }
-  .column-lg-7 {
-    -ms-flex-preferred-size: 58.33333%;
-    flex-basis: 58.33333%;
-    max-width: 58.33333%; }
-  .column-lg-8 {
-    -ms-flex-preferred-size: 66.66667%;
-    flex-basis: 66.66667%;
-    max-width: 66.66667%; }
-  .column-lg-9 {
-    -ms-flex-preferred-size: 75%;
-    flex-basis: 75%;
-    max-width: 75%; }
-  .column-lg-10 {
-    -ms-flex-preferred-size: 83.33333%;
-    flex-basis: 83.33333%;
-    max-width: 83.33333%; }
-  .column-lg-11 {
-    -ms-flex-preferred-size: 91.66667%;
-    flex-basis: 91.66667%;
-    max-width: 91.66667%; }
-  .gallery {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
-    max-width: 100%;
- } }
-
-@supports (display: grid) {
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto; }
-    .grid > [class*="column-"] {
-      margin: 0;
-      max-width: 80%; }
-  .column-xs-1 {
-    grid-column-start: span 1;
-    grid-column-end: span 1; }
-  .column-xs-2 {
-    grid-column-start: span 2;
-    grid-column-end: span 2; }
-  .column-xs-3 {
-    grid-column-start: span 3;
-    grid-column-end: span 3; }
-  .column-xs-4 {
-    grid-column-start: span 4;
-    grid-column-end: span 4; }
-  .column-xs-5 {
-    grid-column-start: span 5;
-    grid-column-end: span 5; }
-  .column-xs-6 {
-    grid-column-start: span 6;
-    grid-column-end: span 6; }
-  .column-xs-7 {
-    grid-column-start: span 7;
-    grid-column-end: span 7; }
-  .column-xs-8 {
-    grid-column-start: span 8;
-    grid-column-end: span 8; }
-  .column-xs-9 {
-    grid-column-start: span 9;
-    grid-column-end: span 9; }
-  .column-xs-10 {
-    grid-column-start: span 10;
-    grid-column-end: span 10; }
-  .column-xs-11 {
-    grid-column-start: span 11;
-    grid-column-end: span 11; }
-  .column-xs-12 {
-    grid-column-start: span 12;
-    grid-column-end: span 12; }
-  @media (min-width: 48rem) {
-    .column-sm-1 {
-      grid-column-start: span 1;
-      grid-column-end: span 1; }
-    .column-sm-2 {
-      grid-column-start: span 2;
-      grid-column-end: span 2; }
-    .column-sm-3 {
-      grid-column-start: span 3;
-      grid-column-end: span 3; }
-    .column-sm-4 {
-      grid-column-start: span 4;
-      grid-column-end: span 4; }
-    .column-sm-5 {
-      grid-column-start: span 5;
-      grid-column-end: span 5; }
-    .column-sm-6 {
-      grid-column-start: span 6;
-      grid-column-end: span 6; }
-    .column-sm-7 {
-      grid-column-start: span 7;
-      grid-column-end: span 7; }
-    .column-sm-8 {
-      grid-column-start: span 8;
-      grid-column-end: span 8; }
-    .column-sm-9 {
-      grid-column-start: span 9;
-      grid-column-end: span 9; }
-    .column-sm-10 {
-      grid-column-start: span 10;
-      grid-column-end: span 10; }
-    .column-sm-11 {
-      grid-column-start: span 11;
-      grid-column-end: span 11; }
-    .column-sm-12 {
-      grid-column-start: span 12;
-      grid-column-end: span 12; } }
-  @media (min-width: 62rem) {
-    .column-md-1 {
-      grid-column-start: span 1;
-      grid-column-end: span 1; }
-    .column-md-2 {
-      grid-column-start: span 2;
-      grid-column-end: span 2; }
-    .column-md-3 {
-      grid-column-start: span 3;
-      grid-column-end: span 3; }
-    .column-md-4 {
-      grid-column-start: span 4;
-      grid-column-end: span 4; }
-    .column-md-5 {
-      grid-column-start: span 5;
-      grid-column-end: span 5; }
-    .column-md-6 {
-      grid-column-start: span 6;
-      grid-column-end: span 6; }
-    .column-md-7 {
-      grid-column-start: span 7;
-      grid-column-end: span 7; }
-    .column-md-8 {
-      grid-column-start: span 8;
-      grid-column-end: span 8; }
-    .column-md-9 {
-      grid-column-start: span 9;
-      grid-column-end: span 9; }
-    .column-md-10 {
-      grid-column-start: span 10;
-      grid-column-end: span 10; }
-    .column-md-11 {
-      grid-column-start: span 11;
-      grid-column-end: span 11; }
-    .column-md-12 {
-      grid-column-start: span 12;
-      grid-column-end: span 12; } }
-  @media (min-width: 75rem) {
-    .column-lg-1 {
-      grid-column-start: span 1;
-      grid-column-end: span 1; }
-    .column-lg-2 {
-      grid-column-start: span 2;
-      grid-column-end: span 2; }
-    .column-lg-3 {
-      grid-column-start: span 3;
-      grid-column-end: span 3; }
-    .column-lg-4 {
-      grid-column-start: span 4;
-      grid-column-end: span 4; }
-    .column-lg-5 {
-      grid-column-start: span 5;
-      grid-column-end: span 5; }
-    .column-lg-6 {
-      grid-column-start: span 6;
-      grid-column-end: span 6; }
-    .column-lg-7 {
-      grid-column-start: span 7;
-      grid-column-end: span 7; }
-    .column-lg-8 {
-      grid-column-start: span 8;
-      grid-column-end: span 8; }
-    .column-lg-9 {
-      grid-column-start: span 9;
-      grid-column-end: span 9; }
-    .column-lg-10 {
-      grid-column-start: span 10;
-      grid-column-end: span 10; }
-    .column-lg-11 {
-      grid-column-start: span 11;
-      grid-column-end: span 11; }
-    .column-lg-12 {
-      grid-column-start: span 12;
-      grid-column-end: span 12; }
-    }} 
 </style>
